@@ -3,19 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>G Underground Boxing Club</title>
+    <title>G UNDERGROUND - Martial Arts</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
             --primary: #d4af37; /* Gold */
             --primary-dark: #b8941f;
-            --secondary: #1a1a1a; /* Dark black */
+            --secondary: #0a0a0a; /* Dark black */
             --accent: #c41e3a; /* Red */
             --light: #f5f5f5;
             --gray: #9e9e9e;
             --dark: #000000;
-            --border-radius: 8px;
-            --box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+            --border-radius: 5px;
+            --box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
             --transition: all 0.3s ease;
         }
 
@@ -23,7 +24,7 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Oswald', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
 
         body {
@@ -41,14 +42,14 @@
 
         /* Header Styles */
         header {
-            background-color: rgba(0, 0, 0, 0.9);
+            background-color: rgba(0, 0, 0, 0.95);
             color: var(--light);
             padding: 15px 0;
             box-shadow: var(--box-shadow);
             position: sticky;
             top: 0;
             z-index: 100;
-            border-bottom: 2px solid var(--primary);
+            border-bottom: 3px solid var(--accent);
         }
 
         .header-content {
@@ -66,25 +67,29 @@
         }
 
         .logo img {
-            height: 50px;
+            height: 60px;
             width: auto;
+            filter: drop-shadow(0 0 5px rgba(212, 175, 55, 0.5));
         }
 
         .logo-text {
             display: flex;
             flex-direction: column;
+            text-transform: uppercase;
         }
 
         .logo-main {
             color: var(--primary);
-            font-size: 1.8rem;
+            font-size: 2rem;
             line-height: 1;
+            letter-spacing: 3px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
         }
 
         .logo-sub {
             color: var(--light);
             font-size: 0.8rem;
-            letter-spacing: 2px;
+            letter-spacing: 5px;
         }
 
         nav ul {
@@ -101,6 +106,8 @@
             padding: 5px 10px;
             border-radius: var(--border-radius);
             position: relative;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
         nav a:after {
@@ -110,7 +117,7 @@
             height: 2px;
             bottom: 0;
             left: 0;
-            background-color: var(--primary);
+            background-color: var(--accent);
             transition: var(--transition);
         }
 
@@ -131,11 +138,11 @@
 
         /* Hero Section */
         .hero {
-            background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('https://images.unsplash.com/photo-1549719386-74dfcbf7dbed?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80');
+            background: linear-gradient(rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.85)), url('https://raw.githubusercontent.com/Luciferr444/g.underground/main/G/8346d4ed-ed29-4025-9679-2a0f28e1f054.jpg');
             background-size: cover;
             background-position: center;
             color: var(--light);
-            padding: 120px 0;
+            padding: 150px 0;
             text-align: center;
             position: relative;
         }
@@ -151,39 +158,42 @@
         }
 
         .hero h1 {
-            font-size: 3.5rem;
+            font-size: 4rem;
             margin-bottom: 20px;
             text-transform: uppercase;
-            letter-spacing: 3px;
+            letter-spacing: 5px;
             color: var(--primary);
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.8);
         }
 
         .hero p {
-            font-size: 1.2rem;
+            font-size: 1.3rem;
             max-width: 700px;
             margin: 0 auto 30px;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
         }
 
         .btn {
             display: inline-block;
             background: linear-gradient(135deg, var(--primary), var(--primary-dark));
             color: var(--secondary);
-            padding: 12px 30px;
+            padding: 15px 35px;
             border-radius: var(--border-radius);
             text-decoration: none;
-            font-weight: 600;
+            font-weight: 700;
             text-transform: uppercase;
-            letter-spacing: 1px;
+            letter-spacing: 2px;
             transition: var(--transition);
             border: none;
             cursor: pointer;
             box-shadow: var(--box-shadow);
+            border: 2px solid transparent;
         }
 
         .btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 6px 15px rgba(212, 175, 55, 0.4);
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(212, 175, 55, 0.5);
+            border-color: var(--primary);
         }
 
         .btn-accent {
@@ -192,50 +202,53 @@
         }
 
         .btn-accent:hover {
-            box-shadow: 0 6px 15px rgba(196, 30, 58, 0.4);
+            box-shadow: 0 8px 20px rgba(196, 30, 58, 0.5);
+            border-color: var(--accent);
         }
 
         /* Section Styles */
         section {
-            padding: 80px 0;
+            padding: 100px 0;
         }
 
         .section-title {
             text-align: center;
-            margin-bottom: 50px;
+            margin-bottom: 60px;
             position: relative;
         }
 
         .section-title h2 {
-            font-size: 2.5rem;
+            font-size: 3rem;
             color: var(--primary);
             text-transform: uppercase;
-            letter-spacing: 2px;
+            letter-spacing: 3px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
         }
 
         .section-title:after {
             content: '';
             display: block;
-            width: 100px;
-            height: 4px;
+            width: 150px;
+            height: 5px;
             background: linear-gradient(to right, var(--primary), var(--accent));
-            margin: 15px auto;
+            margin: 20px auto;
             border-radius: 2px;
         }
 
         .section-subtitle {
             text-align: center;
-            max-width: 700px;
-            margin: 0 auto 40px;
+            max-width: 800px;
+            margin: 0 auto 50px;
             color: var(--gray);
-            font-size: 1.1rem;
+            font-size: 1.2rem;
+            line-height: 1.8;
         }
 
         /* About Section */
         .about-content {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 40px;
+            gap: 50px;
             align-items: center;
         }
 
@@ -243,7 +256,19 @@
             border-radius: var(--border-radius);
             overflow: hidden;
             box-shadow: var(--box-shadow);
-            border: 2px solid var(--primary);
+            border: 3px solid var(--primary);
+            position: relative;
+        }
+
+        .about-image:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, rgba(212, 175, 55, 0.2), rgba(196, 30, 58, 0.2));
+            z-index: 1;
         }
 
         .about-image img {
@@ -258,57 +283,254 @@
         }
 
         .about-text h3 {
-            font-size: 1.8rem;
-            margin-bottom: 20px;
+            font-size: 2.2rem;
+            margin-bottom: 25px;
             color: var(--primary);
+            text-transform: uppercase;
+            letter-spacing: 2px;
         }
 
         .about-text p {
-            margin-bottom: 20px;
+            margin-bottom: 25px;
             color: var(--light);
+            font-size: 1.1rem;
+            line-height: 1.8;
         }
 
         .features {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-            margin-top: 30px;
+            gap: 25px;
+            margin-top: 40px;
         }
 
         .feature {
-            background: linear-gradient(135deg, rgba(212, 175, 55, 0.1), rgba(26, 26, 26, 0.8));
-            padding: 20px;
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.1), rgba(26, 26, 26, 0.9));
+            padding: 25px;
             border-radius: var(--border-radius);
             box-shadow: var(--box-shadow);
             text-align: center;
             transition: var(--transition);
-            border: 1px solid rgba(212, 175, 55, 0.2);
+            border: 2px solid rgba(212, 175, 55, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .feature:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(to right, var(--primary), var(--accent));
         }
 
         .feature:hover {
-            transform: translateY(-5px);
+            transform: translateY(-10px);
             border-color: var(--primary);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.6);
         }
 
         .feature i {
-            font-size: 2.5rem;
+            font-size: 3rem;
             color: var(--primary);
-            margin-bottom: 15px;
+            margin-bottom: 20px;
+            text-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
         }
 
         .feature h4 {
             color: var(--primary);
+            margin-bottom: 15px;
+            font-size: 1.4rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Training Schedule */
+        .schedule-section {
+            background: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9)), url('https://raw.githubusercontent.com/Luciferr444/g.underground/main/G/4c667d3e-f243-438a-8683-e04f78b29d1f.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+
+        .schedule-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .schedule-card {
+            background: linear-gradient(135deg, rgba(26, 26, 26, 0.9), rgba(0, 0, 0, 0.9));
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--box-shadow);
+            transition: var(--transition);
+            border: 2px solid rgba(212, 175, 55, 0.3);
+            position: relative;
+        }
+
+        .schedule-card:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(to right, var(--primary), var(--accent));
+        }
+
+        .schedule-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--primary);
+        }
+
+        .schedule-header {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: var(--secondary);
+            padding: 20px;
+            text-align: center;
+        }
+
+        .schedule-header h3 {
+            font-size: 1.8rem;
             margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .schedule-body {
+            padding: 30px;
+        }
+
+        .schedule-details {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .schedule-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .schedule-item:last-child {
+            border-bottom: none;
+        }
+
+        .schedule-item i {
+            color: var(--primary);
+            font-size: 1.5rem;
+            width: 30px;
+        }
+
+        .schedule-info h4 {
+            color: var(--primary);
+            margin-bottom: 5px;
+            font-size: 1.2rem;
+        }
+
+        /* Class Section */
+        .class-section {
+            background: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9)), url('https://raw.githubusercontent.com/Luciferr444/g.underground/main/G/b6d19996-878a-4b06-8edb-1133a4ab9fcc.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+
+        .class-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .class-card {
+            background: linear-gradient(135deg, rgba(26, 26, 26, 0.9), rgba(0, 0, 0, 0.9));
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--box-shadow);
+            transition: var(--transition);
+            border: 2px solid rgba(212, 175, 55, 0.3);
+            position: relative;
+        }
+
+        .class-card:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(to right, var(--primary), var(--accent));
+        }
+
+        .class-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--primary);
+        }
+
+        .class-media {
+            height: 200px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .class-media img, .class-media video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .class-card:hover .class-media img,
+        .class-card:hover .class-media video {
+            transform: scale(1.1);
+        }
+
+        .play-icon {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: rgba(0, 0, 0, 0.7);
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary);
+            font-size: 1.5rem;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .play-icon:hover {
+            background: rgba(212, 175, 55, 0.8);
+            color: var(--secondary);
+        }
+
+        .class-info {
+            padding: 20px;
+        }
+
+        .class-info h3 {
+            color: var(--primary);
+            margin-bottom: 10px;
+            font-size: 1.5rem;
+            text-transform: uppercase;
         }
 
         /* Event Section */
         .event-highlight {
-            background: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9)), url('https://images.unsplash.com/photo-1626818599235-6d1df4b2b5a3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80');
+            background: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9)), url('https://raw.githubusercontent.com/Luciferr444/g.underground/main/G/8c16635b-788d-4009-8850-49b868179145.jpg');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
-            padding: 80px 0;
-            text-align: center;
         }
 
         .event-card {
@@ -316,34 +538,48 @@
             border-radius: var(--border-radius);
             overflow: hidden;
             box-shadow: var(--box-shadow);
-            max-width: 1000px;
+            max-width: 1100px;
             margin: 0 auto;
-            border: 2px solid var(--primary);
+            border: 3px solid var(--primary);
+            position: relative;
+        }
+
+        .event-card:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(to right, var(--primary), var(--accent));
         }
 
         .event-header {
             background: linear-gradient(135deg, var(--primary), var(--primary-dark));
             color: var(--secondary);
-            padding: 20px;
+            padding: 25px;
             text-align: center;
         }
 
         .event-header h3 {
-            font-size: 1.8rem;
+            font-size: 2.2rem;
             margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 3px;
         }
 
         .event-body {
-            padding: 30px;
+            padding: 40px;
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 30px;
+            gap: 40px;
         }
 
         .event-poster {
             border-radius: var(--border-radius);
             overflow: hidden;
             box-shadow: var(--box-shadow);
+            border: 2px solid var(--accent);
         }
 
         .event-poster img {
@@ -353,228 +589,215 @@
         }
 
         .event-info h4 {
-            font-size: 1.3rem;
-            margin-bottom: 15px;
+            font-size: 1.8rem;
+            margin-bottom: 25px;
             color: var(--primary);
+            text-transform: uppercase;
+            letter-spacing: 2px;
         }
 
         .event-details {
             display: flex;
             flex-direction: column;
-            gap: 15px;
-            margin-bottom: 20px;
+            gap: 20px;
+            margin-bottom: 30px;
         }
 
         .detail {
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 15px;
         }
 
         .detail i {
             color: var(--primary);
-            width: 20px;
+            width: 25px;
+            font-size: 1.3rem;
         }
 
-        .event-price {
+        .martial-arts {
+            display: flex;
+            gap: 15px;
+            margin: 15px 0;
+        }
+
+        .martial-art {
+            background: rgba(212, 175, 55, 0.2);
+            padding: 8px 15px;
+            border-radius: var(--border-radius);
+            border: 1px solid var(--primary);
+            font-weight: 600;
+        }
+
+        .registration-count {
             background: linear-gradient(135deg, var(--accent), #a0151e);
             color: white;
             padding: 15px;
             border-radius: var(--border-radius);
             text-align: center;
-            margin-top: 15px;
+            margin: 20px 0;
+            border: 2px solid var(--primary);
         }
 
-        .event-price .price {
+        .registration-count .count {
             font-size: 2rem;
             font-weight: 700;
+            color: var(--primary);
         }
 
-        /* Locations Section */
-        .locations {
+        .event-buttons {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        /* Gallery Section */
+        .gallery-section {
+            background: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9)), url('https://raw.githubusercontent.com/Luciferr444/g.underground/main/G/b858e40a-4099-45fe-b015-3812aaa0378a.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+
+        .gallery {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 20px;
         }
 
-        .location-card {
-            background: linear-gradient(135deg, rgba(26, 26, 26, 0.9), rgba(0, 0, 0, 0.9));
+        .gallery-item {
             border-radius: var(--border-radius);
             overflow: hidden;
             box-shadow: var(--box-shadow);
+            height: 280px;
             transition: var(--transition);
-            border: 1px solid rgba(212, 175, 55, 0.2);
+            border: 2px solid rgba(212, 175, 55, 0.3);
+            position: relative;
         }
 
-        .location-card:hover {
-            transform: translateY(-5px);
+        .gallery-item:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, rgba(212, 175, 55, 0.1), rgba(196, 30, 58, 0.1));
+            z-index: 1;
+            opacity: 0;
+            transition: var(--transition);
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.05);
             border-color: var(--primary);
+            z-index: 10;
         }
 
-        .location-image {
-            height: 200px;
-            overflow: hidden;
+        .gallery-item:hover:before {
+            opacity: 1;
         }
 
-        .location-image img {
+        .gallery-item img {
             width: 100%;
             height: 100%;
             object-fit: cover;
             transition: var(--transition);
         }
 
-        .location-card:hover .location-image img {
+        .gallery-item:hover img {
             transform: scale(1.1);
         }
 
-        .location-info {
-            padding: 20px;
-        }
-
-        .location-info h3 {
-            margin-bottom: 10px;
-            color: var(--primary);
-        }
-
-        .location-info p {
-            margin-bottom: 15px;
-            color: var(--gray);
-        }
-
-        /* Reviews Section */
-        .reviews-section {
-            background: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9)), url('https://images.unsplash.com/photo-1599058917765-a780eda07a3e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80');
+        /* Contact Section */
+        .contact-section {
+            background: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9)), url('https://raw.githubusercontent.com/Luciferr444/g.underground/main/G/bdd1bc00-2d5e-4491-8037-4c2ba3e84bf1.jpg');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
         }
 
-        .reviews-container {
-            max-width: 800px;
-            margin: 0 auto;
+        .contact-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
         }
 
-        .review-form {
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+
+        .contact-card {
             background: linear-gradient(135deg, rgba(26, 26, 26, 0.9), rgba(0, 0, 0, 0.9));
             padding: 30px;
             border-radius: var(--border-radius);
             box-shadow: var(--box-shadow);
-            margin-bottom: 40px;
-            border: 1px solid rgba(212, 175, 55, 0.2);
+            border: 2px solid rgba(212, 175, 55, 0.3);
+            position: relative;
         }
 
-        .form-group {
+        .contact-card:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(to right, var(--primary), var(--accent));
+        }
+
+        .contact-card h3 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: var(--primary);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
             margin-bottom: 20px;
         }
 
-        .form-group label {
-            display: block;
-            margin-bottom: 8px;
-            font-weight: 500;
+        .contact-item i {
             color: var(--primary);
+            width: 25px;
+            font-size: 1.3rem;
         }
 
-        .form-control {
-            width: 100%;
-            padding: 12px 15px;
-            border: 1px solid rgba(212, 175, 55, 0.3);
-            border-radius: var(--border-radius);
-            font-size: 1rem;
-            transition: var(--transition);
-            background-color: rgba(0, 0, 0, 0.5);
-            color: var(--light);
-        }
-
-        .form-control:focus {
-            border-color: var(--primary);
-            outline: none;
-            box-shadow: 0 0 0 2px rgba(212, 175, 55, 0.2);
-        }
-
-        textarea.form-control {
-            min-height: 120px;
-            resize: vertical;
-        }
-
-        .rating {
+        .social-links {
             display: flex;
-            gap: 5px;
-            margin-bottom: 10px;
+            gap: 15px;
+            margin-top: 25px;
         }
 
-        .rating input {
-            display: none;
-        }
-
-        .rating label {
-            font-size: 1.5rem;
-            color: #444;
-            cursor: pointer;
-            transition: var(--transition);
-        }
-
-        .rating input:checked ~ label,
-        .rating label:hover,
-        .rating label:hover ~ label {
-            color: var(--primary);
-        }
-
-        .reviews-list {
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-        }
-
-        .review-card {
-            background: linear-gradient(135deg, rgba(26, 26, 26, 0.9), rgba(0, 0, 0, 0.9));
-            padding: 20px;
-            border-radius: var(--border-radius);
-            box-shadow: var(--box-shadow);
-            border: 1px solid rgba(212, 175, 55, 0.2);
-        }
-
-        .review-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 15px;
-        }
-
-        .reviewer {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .reviewer-avatar {
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+        .social-links a {
             display: flex;
             align-items: center;
             justify-content: center;
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            border-radius: 50%;
             color: var(--secondary);
-            font-weight: 700;
+            transition: var(--transition);
+            text-decoration: none;
+            font-size: 1.3rem;
+            border: 2px solid transparent;
         }
 
-        .reviewer-info h4 {
-            margin-bottom: 5px;
-            color: var(--primary);
+        .social-links a:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(212, 175, 55, 0.5);
+            border-color: var(--primary);
         }
 
-        .review-date {
-            color: var(--gray);
-            font-size: 0.9rem;
-        }
-
-        .review-rating {
-            color: var(--primary);
-        }
-
-        .review-content {
-            line-height: 1.6;
-            color: var(--light);
+        .social-links .whatsapp {
+            background: linear-gradient(135deg, #25D366, #128C7E);
         }
 
         /* Footer */
@@ -582,7 +805,7 @@
             background: linear-gradient(135deg, rgba(0, 0, 0, 0.95), rgba(26, 26, 26, 0.95));
             color: var(--light);
             padding: 60px 0 20px;
-            border-top: 2px solid var(--primary);
+            border-top: 3px solid var(--accent);
         }
 
         .footer-content {
@@ -593,11 +816,13 @@
         }
 
         .footer-column h3 {
-            font-size: 1.3rem;
-            margin-bottom: 20px;
+            font-size: 1.5rem;
+            margin-bottom: 25px;
             color: var(--primary);
             position: relative;
             padding-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
         }
 
         .footer-column h3:after {
@@ -605,7 +830,7 @@
             position: absolute;
             left: 0;
             bottom: 0;
-            width: 40px;
+            width: 50px;
             height: 3px;
             background: linear-gradient(to right, var(--primary), var(--accent));
         }
@@ -615,67 +840,31 @@
         }
 
         .footer-links li {
-            margin-bottom: 10px;
+            margin-bottom: 12px;
         }
 
         .footer-links a {
             color: var(--gray);
             text-decoration: none;
             transition: var(--transition);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.9rem;
         }
 
         .footer-links a:hover {
             color: var(--primary);
-            padding-left: 5px;
-        }
-
-        .contact-info {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-        }
-
-        .contact-item {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .contact-item i {
-            color: var(--primary);
-            width: 20px;
-        }
-
-        .social-links {
-            display: flex;
-            gap: 15px;
-            margin-top: 20px;
-        }
-
-        .social-links a {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 40px;
-            height: 40px;
-            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
-            border-radius: 50%;
-            color: var(--secondary);
-            transition: var(--transition);
-            text-decoration: none;
-        }
-
-        .social-links a:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(212, 175, 55, 0.4);
+            padding-left: 8px;
         }
 
         .copyright {
             text-align: center;
-            padding-top: 20px;
+            padding-top: 30px;
             border-top: 1px solid rgba(255, 255, 255, 0.1);
             color: var(--gray);
             font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
         /* Responsive Styles */
@@ -702,11 +891,11 @@
             }
             
             .hero h1 {
-                font-size: 2.5rem;
+                font-size: 2.8rem;
             }
             
             .hero p {
-                font-size: 1rem;
+                font-size: 1.1rem;
             }
             
             .mobile-menu {
@@ -727,6 +916,14 @@
                 flex-direction: column;
                 gap: 10px;
             }
+            
+            .section-title h2 {
+                font-size: 2.2rem;
+            }
+            
+            .event-buttons {
+                flex-direction: column;
+            }
         }
     </style>
 </head>
@@ -736,10 +933,10 @@
         <div class="container">
             <div class="header-content">
                 <div class="logo">
-                    <img src="https://raw.githubusercontent.com/Luciferr444/g.underground/main/bf4f7e57-fd62-48b2-a3d7-3f7db2a79aae.jpg" alt="G Underground Logo">
+                    <img src="https://raw.githubusercontent.com/Luciferr444/g.underground/main/258723c5-3d5e-418e-aeca-1f046a504578.jpg" alt="G Underground Logo">
                     <div class="logo-text">
                         <div class="logo-main">G UNDERGROUND</div>
-                        <div class="logo-sub">BOXING CLUB</div>
+                        <div class="logo-sub">MARTIAL ARTS</div>
                     </div>
                 </div>
                 <div class="mobile-menu">
@@ -749,9 +946,10 @@
                     <ul>
                         <li><a href="#" class="active">Home</a></li>
                         <li><a href="#about">About</a></li>
+                        <li><a href="#class">Class</a></li>
+                        <li><a href="#schedule">Schedule</a></li>
                         <li><a href="#event">Event</a></li>
-                        <li><a href="#locations">Locations</a></li>
-                        <li><a href="#reviews">Reviews</a></li>
+                        <li><a href="#gallery">Gallery</a></li>
                         <li><a href="#contact">Contact</a></li>
                     </ul>
                 </nav>
@@ -762,8 +960,8 @@
     <!-- Hero Section -->
     <section class="hero">
         <div class="container">
-            <h1>G UNDERGROUND BOXING CLUB</h1>
-            <p>Train like a champion. Fight with honor. Join our community of dedicated boxers and fitness enthusiasts.</p>
+            <h1>G UNDERGROUND</h1>
+            <p>Multi-Martial Arts Training & Community. Train Hard, Fight With Honor.</p>
             <a href="#event" class="btn">Upcoming Event</a>
             <a href="https://chat.whatsapp.com/IPMEUhGbXL34MAbdoUry1P" target="_blank" class="btn btn-accent">Join Our Group</a>
         </div>
@@ -773,29 +971,29 @@
     <section id="about">
         <div class="container">
             <div class="section-title">
-                <h2>About Our Club</h2>
+                <h2>About G Underground</h2>
             </div>
-            <p class="section-subtitle">G Underground is more than just a boxing gym - it's a community dedicated to discipline, strength, and personal growth.</p>
+            <p class="section-subtitle">G Underground is a premier martial arts community dedicated to discipline, strength, and personal growth through various fighting disciplines.</p>
             
             <div class="about-content">
                 <div class="about-image">
-                    <img src="https://images.unsplash.com/photo-1599058917765-a780eda07a3e?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Boxing Training">
+                    <img src="https://raw.githubusercontent.com/Luciferr444/g.underground/main/G/83523779-f576-41e1-bfd4-ccef8c74d70a.jpg" alt="G Underground Training">
                 </div>
                 <div class="about-text">
-                    <h3>Train With The Best</h3>
-                    <p>At G Underground, we provide professional boxing training for all skill levels. Whether you're looking to compete, get in shape, or learn self-defense, our experienced coaches will help you reach your goals.</p>
-                    <p>Our outdoor facilities feature professional equipment, sparring areas, and a supportive community that pushes you to be your best.</p>
+                    <h3>Multi-Martial Arts Community</h3>
+                    <p>At G Underground, we embrace all martial arts disciplines. While our current classes focus on boxing technique, our community welcomes practitioners of all styles including Muay Thai, MMA, Kickboxing, and more.</p>
+                    <p>Our outdoor training facilities provide the perfect environment for developing skills, testing techniques, and building a strong martial arts community.</p>
                     
                     <div class="features">
                         <div class="feature">
-                            <i class="fas fa-dumbbell"></i>
-                            <h4>Professional Equipment</h4>
-                            <p>Top-quality boxing gear and training facilities</p>
+                            <i class="fas fa-fist-raised"></i>
+                            <h4>Boxing Classes</h4>
+                            <p>Professional boxing technique training for all levels</p>
                         </div>
                         <div class="feature">
-                            <i class="fas fa-users"></i>
-                            <h4>Expert Coaches</h4>
-                            <p>Experienced trainers with competition background</p>
+                            <i class="fas fa-shield-alt"></i>
+                            <h4>Multi-Discipline</h4>
+                            <p>Open to all martial arts styles and practitioners</p>
                         </div>
                         <div class="feature">
                             <i class="fas fa-trophy"></i>
@@ -808,49 +1006,187 @@
         </div>
     </section>
 
+    <!-- Class Section -->
+    <section id="class" class="class-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Training Class</h2>
+            </div>
+            <p class="section-subtitle">Experience our professional boxing training in our outdoor facility</p>
+            
+            <div class="class-content">
+                <div class="class-card">
+                    <div class="class-media">
+                        <img src="https://raw.githubusercontent.com/Luciferr444/g.underground/main/class/class%20environment.jpg" alt="Class Environment">
+                    </div>
+                    <div class="class-info">
+                        <h3>Outdoor Training Facility</h3>
+                        <p>Our professional outdoor training area equipped for boxing technique development and conditioning.</p>
+                    </div>
+                </div>
+                
+                <div class="class-card">
+                    <div class="class-media">
+                        <video controls poster="https://raw.githubusercontent.com/Luciferr444/g.underground/main/class/class%20environment.jpg">
+                            <source src="https://raw.githubusercontent.com/Luciferr444/g.underground/main/class/VID-20241023-WA0000.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                    <div class="class-info">
+                        <h3>Boxing Technique Session</h3>
+                        <p>Professional boxing training focusing on fundamentals, footwork, and defensive techniques.</p>
+                    </div>
+                </div>
+                
+                <div class="class-card">
+                    <div class="class-media">
+                        <video controls poster="https://raw.githubusercontent.com/Luciferr444/g.underground/main/class/class%20environment.jpg">
+                            <source src="https://raw.githubusercontent.com/Luciferr444/g.underground/main/class/VID-20241023-WA0001.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                    <div class="class-info">
+                        <h3>Advanced Training</h3>
+                        <p>Advanced boxing techniques and combination drills for experienced practitioners.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Training Schedule -->
+    <section id="schedule" class="schedule-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Training Schedule</h2>
+            </div>
+            <p class="section-subtitle">Structured training program with dedicated days for technique and sparring</p>
+            
+            <div class="schedule-container">
+                <div class="schedule-card">
+                    <div class="schedule-header">
+                        <h3>Boxing Training</h3>
+                        <p>Thursdays - Technique Focus</p>
+                    </div>
+                    <div class="schedule-body">
+                        <div class="schedule-details">
+                            <div class="schedule-item">
+                                <i class="far fa-calendar-alt"></i>
+                                <div class="schedule-info">
+                                    <h4>Hari Khamis</h4>
+                                    <p>Thursday Training Sessions</p>
+                                </div>
+                            </div>
+                            <div class="schedule-item">
+                                <i class="far fa-clock"></i>
+                                <div class="schedule-info">
+                                    <h4>9 PM - 12 AM</h4>
+                                    <p>3 Sessions: 9PM, 10PM, 11PM</p>
+                                </div>
+                            </div>
+                            <div class="schedule-item">
+                                <i class="fas fa-dumbbell"></i>
+                                <div class="schedule-info">
+                                    <h4>Boxing Technique</h4>
+                                    <p>Focus on fundamentals and skills</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="schedule-card">
+                    <div class="schedule-header">
+                        <h3>Sparring Sessions</h3>
+                        <p>Saturdays - All Martial Arts</p>
+                    </div>
+                    <div class="schedule-body">
+                        <div class="schedule-details">
+                            <div class="schedule-item">
+                                <i class="far fa-calendar-alt"></i>
+                                <div class="schedule-info">
+                                    <h4>Hari Sabtu</h4>
+                                    <p>Every Saturday</p>
+                                </div>
+                            </div>
+                            <div class="schedule-item">
+                                <i class="far fa-clock"></i>
+                                <div class="schedule-info">
+                                    <h4>9 PM - 12 AM</h4>
+                                    <p>Weekly sparring sessions</p>
+                                </div>
+                            </div>
+                            <div class="schedule-item">
+                                <i class="fas fa-users"></i>
+                                <div class="schedule-info">
+                                    <h4>All Martial Arts</h4>
+                                    <p>Open to all fighting styles</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Event Section -->
     <section id="event" class="event-highlight">
         <div class="container">
             <div class="section-title">
-                <h2>Upcoming Event</h2>
+                <h2>Upcoming Event 2025</h2>
             </div>
             
             <div class="event-card">
                 <div class="event-header">
                     <h3>SPARRING ENTERTAINMENT BY G UNDERGROUND</h3>
-                    <p>An exciting night of boxing entertainment</p>
+                    <p>An exciting night of martial arts entertainment - 2025 Edition</p>
                 </div>
                 <div class="event-body">
                     <div class="event-poster">
                         <img src="https://raw.githubusercontent.com/Luciferr444/g.underground/main/258723c5-3d5e-418e-aeca-1f046a504578.jpg" alt="Sparring Event Poster">
                     </div>
                     <div class="event-info">
-                        <h4>Event Details</h4>
+                        <h4>Event Details 2025</h4>
                         <div class="event-details">
                             <div class="detail">
                                 <i class="far fa-calendar-alt"></i>
-                                <span>22 November 2023</span>
+                                <span><strong>15 March 2025</strong></span>
                             </div>
                             <div class="detail">
                                 <i class="far fa-clock"></i>
-                                <span>5:30 PM - 12:00 AM</span>
+                                <span><strong>5:30 PM - 12:00 AM</strong></span>
                             </div>
                             <div class="detail">
                                 <i class="fas fa-map-marker-alt"></i>
-                                <span>Nasi Kandar Apollo, Jalan Reko</span>
+                                <span><strong>Nasi Kandar Apollo, Jalan Reko</strong></span>
                             </div>
                             <div class="detail">
                                 <i class="fas fa-medal"></i>
-                                <span>Medals for Winners</span>
+                                <span><strong>Medals & Trophies for Winners</strong></span>
+                            </div>
+                            <div class="detail">
+                                <i class="fas fa-fist-raised"></i>
+                                <span><strong>Featured Martial Arts:</strong></span>
                             </div>
                         </div>
-                        <div class="event-price">
-                            <div class="price">RM 35</div>
-                            <p>Per Participant</p>
+                        
+                        <div class="martial-arts">
+                            <div class="martial-art">BOXING</div>
+                            <div class="martial-art">KICKBOXING</div>
                         </div>
-                        <div style="margin-top: 20px;">
-                            <a href="https://wa.me/60195387418?text=Hi,%20I'm%20interested%20in%20joining%20the%20Sparring%20Event%20on%2022%20Nov" class="btn btn-accent" target="_blank">
-                                <i class="fab fa-whatsapp"></i> Register via WhatsApp
+                        
+                        <div class="registration-count">
+                            <div class="count">20+</div>
+                            <p>Participants Already Registered!</p>
+                        </div>
+                        
+                        <div class="event-buttons">
+                            <a href="https://wa.me/60195387418?text=Hi,%20I'm%20interested%20in%20joining%20the%20Sparring%20Event%20on%2015%20March%202025" class="btn btn-accent" target="_blank">
+                                <i class="fab fa-whatsapp"></i> Contact via WhatsApp
+                            </a>
+                            <a href="https://forms.gle/GECNrcUBrvRhUe3s5" class="btn" target="_blank">
+                                <i class="fas fa-file-alt"></i> Registration Form
                             </a>
                         </div>
                     </div>
@@ -859,138 +1195,167 @@
         </div>
     </section>
 
-    <!-- Locations Section -->
-    <section id="locations">
+    <!-- Gallery Section -->
+    <section id="gallery" class="gallery-section">
         <div class="container">
             <div class="section-title">
-                <h2>Our Locations</h2>
+                <h2>Gallery</h2>
             </div>
-            <p class="section-subtitle">Find our outdoor training facilities and sparring locations</p>
+            <p class="section-subtitle">Moments from our training sessions, sparring events, and community activities</p>
             
-            <div class="locations">
-                <div class="location-card">
-                    <div class="location-image">
-                        <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Sparring Location">
-                    </div>
-                    <div class="location-info">
-                        <h3>Sparring Location</h3>
-                        <p>Our dedicated outdoor sparring facility with professional boxing ring and safety equipment.</p>
-                        <div class="detail">
-                            <i class="fas fa-map-marker-alt"></i>
-                            <span>Outdoor facility with professional setup</span>
-                        </div>
-                    </div>
+            <div class="gallery">
+                <div class="gallery-item">
+                    <img src="https://raw.githubusercontent.com/Luciferr444/g.underground/main/G/18df68e9-b319-4880-a3aa-0e59b03de563.jpg" alt="G Underground Training">
                 </div>
-                
-                <div class="location-card">
-                    <div class="location-image">
-                        <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Training Location">
-                    </div>
-                    <div class="location-info">
-                        <h3>Training Location</h3>
-                        <p>Our main outdoor training facility with boxing equipment, bags, and fitness areas.</p>
-                        <div class="detail">
-                            <i class="fas fa-map-marker-alt"></i>
-                            <span>Outdoor training area with full equipment</span>
-                        </div>
-                    </div>
+                <div class="gallery-item">
+                    <img src="https://raw.githubusercontent.com/Luciferr444/g.underground/main/G/232c2ad6-b9b5-4934-a8d1-b03e9f55adde.jpg" alt="G Underground Training">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://raw.githubusercontent.com/Luciferr444/g.underground/main/G/4c667d3e-f243-438a-8683-e04f78b29d1f.jpg" alt="G Underground Training">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://raw.githubusercontent.com/Luciferr444/g.underground/main/G/8346d4ed-ed29-4025-9679-2a0f28e1f054.jpg" alt="G Underground Training">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://raw.githubusercontent.com/Luciferr444/g.underground/main/G/83523779-f576-41e1-bfd4-ccef8c74d70a.jpg" alt="G Underground Training">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://raw.githubusercontent.com/Luciferr444/g.underground/main/G/838437c2-7b26-41bd-ada8-53c348806d5d.jpg" alt="G Underground Training">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://raw.githubusercontent.com/Luciferr444/g.underground/main/G/8c16635b-788d-4009-8850-49b868179145.jpg" alt="G Underground Training">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://raw.githubusercontent.com/Luciferr444/g.underground/main/G/b6d19996-878a-4b06-8edb-1133a4ab9fcc.jpg" alt="G Underground Training">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://raw.githubusercontent.com/Luciferr444/g.underground/main/G/b858e40a-4099-45fe-b015-3812aaa0378a.jpg" alt="G Underground Training">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://raw.githubusercontent.com/Luciferr444/g.underground/main/G/bdd1bc00-2d5e-4491-8037-4c2ba3e84bf1.jpg" alt="G Underground Training">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://raw.githubusercontent.com/Luciferr444/g.underground/main/G/c5b67462-7ab6-45f8-b7e8-b579352b8fbf.jpg" alt="G Underground Training">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://raw.githubusercontent.com/Luciferr444/g.underground/main/G/cfe2fdb4-e6bb-49b1-8ac0-9c4a8e7b3073.jpg" alt="G Underground Training">
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Reviews Section -->
-    <section id="reviews" class="reviews-section">
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
         <div class="container">
             <div class="section-title">
-                <h2>Member Reviews</h2>
+                <h2>Contact Us</h2>
             </div>
-            <p class="section-subtitle">See what our members say about their experience at G Underground</p>
+            <p class="section-subtitle">Get in touch with G Underground for training information, event details, or any inquiries</p>
             
-            <div class="reviews-container">
-                <div class="review-form">
-                    <h3>Leave a Review</h3>
-                    <form id="reviewForm">
-                        <div class="form-group">
-                            <label for="reviewerName">Your Name</label>
-                            <input type="text" id="reviewerName" class="form-control" required>
-                        </div>
-                        <div class="form-group">
-                            <label>Rating</label>
-                            <div class="rating">
-                                <input type="radio" id="star5" name="rating" value="5">
-                                <label for="star5">★</label>
-                                <input type="radio" id="star4" name="rating" value="4">
-                                <label for="star4">★</label>
-                                <input type="radio" id="star3" name="rating" value="3">
-                                <label for="star3">★</label>
-                                <input type="radio" id="star2" name="rating" value="2">
-                                <label for="star2">★</label>
-                                <input type="radio" id="star1" name="rating" value="1">
-                                <label for="star1">★</label>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-card">
+                        <h3>Contact Information</h3>
+                        <div class="contact-item">
+                            <i class="fab fa-whatsapp"></i>
+                            <div>
+                                <h4>WhatsApp</h4>
+                                <p>019-538 7418</p>
                             </div>
                         </div>
-                        <div class="form-group">
-                            <label for="reviewText">Your Review</label>
-                            <textarea id="reviewText" class="form-control" required></textarea>
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <div>
+                                <h4>Email</h4>
+                                <p>abdulhasifrahman@gmail.com</p>
+                            </div>
                         </div>
-                        <button type="submit" class="btn">Submit Review</button>
-                    </form>
+                        <div class="contact-item">
+                            <i class="fas fa-users"></i>
+                            <div>
+                                <h4>WhatsApp Group</h4>
+                                <p>Join our community</p>
+                            </div>
+                        </div>
+                        
+                        <div class="social-links">
+                            <a href="https://wa.me/60195387418" target="_blank" class="whatsapp">
+                                <i class="fab fa-whatsapp"></i>
+                            </a>
+                            <a href="https://chat.whatsapp.com/IPMEUhGbXL34MAbdoUry1P" target="_blank">
+                                <i class="fas fa-users"></i>
+                            </a>
+                            <a href="mailto:abdulhasifrahman@gmail.com">
+                                <i class="fas fa-envelope"></i>
+                            </a>
+                        </div>
+                    </div>
                 </div>
                 
-                <div class="reviews-list" id="reviewsList">
-                    <!-- Reviews will be dynamically added here -->
+                <div class="contact-info">
+                    <div class="contact-card">
+                        <h3>Training Locations</h3>
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <h4>Sparring Location</h4>
+                                <p>Outdoor facility for Saturday sparring sessions</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <h4>Training Location</h4>
+                                <p>Outdoor facility for Thursday boxing training</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-calendar-day"></i>
+                            <div>
+                                <h4>Event Venue</h4>
+                                <p>Nasi Kandar Apollo, Jalan Reko</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer id="contact">
+    <footer>
         <div class="container">
             <div class="footer-content">
                 <div class="footer-column">
-                    <h3>G Underground</h3>
-                    <p>Professional boxing club dedicated to training champions and promoting fitness through boxing.</p>
-                    <div class="social-links">
-                        <a href="https://wa.me/60195387418" target="_blank"><i class="fab fa-whatsapp"></i></a>
-                        <a href="https://chat.whatsapp.com/IPMEUhGbXL34MAbdoUry1P" target="_blank"><i class="fas fa-users"></i></a>
-                        <a href="mailto:abdulhasifrahman@gmail.com"><i class="fas fa-envelope"></i></a>
-                    </div>
+                    <h3>G UNDERGROUND</h3>
+                    <p>Multi-martial arts training and community. Train hard, fight with honor, grow together.</p>
                 </div>
                 
                 <div class="footer-column">
                     <h3>Quick Links</h3>
                     <ul class="footer-links">
                         <li><a href="#about">About Us</a></li>
+                        <li><a href="#class">Training Class</a></li>
+                        <li><a href="#schedule">Schedule</a></li>
                         <li><a href="#event">Events</a></li>
-                        <li><a href="#locations">Locations</a></li>
-                        <li><a href="#reviews">Reviews</a></li>
-                        <li><a href="https://chat.whatsapp.com/IPMEUhGbXL34MAbdoUry1P" target="_blank">Join Group</a></li>
+                        <li><a href="#gallery">Gallery</a></li>
+                        <li><a href="#contact">Contact</a></li>
                     </ul>
                 </div>
                 
                 <div class="footer-column">
-                    <h3>Contact Us</h3>
-                    <div class="contact-info">
-                        <div class="contact-item">
-                            <i class="fab fa-whatsapp"></i>
-                            <span>019-538 7418</span>
-                        </div>
-                        <div class="contact-item">
-                            <i class="fas fa-envelope"></i>
-                            <span>abdulhasifrahman@gmail.com</span>
-                        </div>
-                        <div class="contact-item">
-                            <i class="fas fa-users"></i>
-                            <span><a href="https://chat.whatsapp.com/IPMEUhGbXL34MAbdoUry1P" target="_blank" style="color: var(--gray);">Join WhatsApp Group</a></span>
-                        </div>
-                    </div>
+                    <h3>Training Info</h3>
+                    <ul class="footer-links">
+                        <li><a href="#class">Boxing Training (Khamis)</a></li>
+                        <li><a href="#schedule">Sparring Sessions (Sabtu)</a></li>
+                        <li><a href="#event">Upcoming Events</a></li>
+                        <li><a href="#contact">Join Community</a></li>
+                    </ul>
                 </div>
             </div>
             
             <div class="copyright">
-                <p>&copy; 2023 G Underground Boxing Club. All Rights Reserved.</p>
+                <p>&copy; 2025 G UNDERGROUND MARTIAL ARTS. ALL RIGHTS RESERVED.</p>
             </div>
         </div>
     </footer>
@@ -1001,89 +1366,50 @@
             document.querySelector('nav').classList.toggle('active');
         });
 
-        // Review Form Submission
-        document.getElementById('reviewForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            const name = document.getElementById('reviewerName').value;
-            const rating = document.querySelector('input[name="rating"]:checked');
-            const text = document.getElementById('reviewText').value;
-            
-            if (!name || !rating || !text) {
-                alert('Please fill in all fields and select a rating');
-                return;
-            }
-            
-            // Create new review element
-            const reviewCard = document.createElement('div');
-            reviewCard.className = 'review-card';
-            
-            const date = new Date().toLocaleDateString('en-US', {
-                year: 'numeric',
-                month: 'long',
-                day: 'numeric'
-            });
-            
-            // Generate star rating HTML
-            let stars = '';
-            for (let i = 0; i < 5; i++) {
-                if (i < rating.value) {
-                    stars += '<i class="fas fa-star"></i>';
-                } else {
-                    stars += '<i class="far fa-star"></i>';
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('nav a').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if(targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if(targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    document.querySelector('nav').classList.remove('active');
                 }
-            }
-            
-            reviewCard.innerHTML = `
-                <div class="review-header">
-                    <div class="reviewer">
-                        <div class="reviewer-avatar">${name.charAt(0).toUpperCase()}</div>
-                        <div class="reviewer-info">
-                            <h4>${name}</h4>
-                            <div class="review-date">${date}</div>
-                        </div>
-                    </div>
-                    <div class="review-rating">
-                        ${stars}
-                    </div>
-                </div>
-                <div class="review-content">
-                    <p>${text}</p>
-                </div>
-            `;
-            
-            // Add new review to the top of the list
-            document.getElementById('reviewsList').prepend(reviewCard);
-            
-            // Reset form
-            document.getElementById('reviewForm').reset();
-            
-            // Show success message
-            alert('Thank you for your review!');
+            });
         });
 
-        // Sample reviews
-        const sampleReviews = [
-            {
-                name: 'Ahmad R.',
-                rating: 5,
-                date: 'October 15, 2023',
-                text: 'Amazing training facility with professional coaches. I\'ve improved my technique significantly since joining G Underground. The community is supportive and the training is challenging but rewarding.'
-            },
-            {
-                name: 'Sarah L.',
-                rating: 4,
-                date: 'October 5, 2023',
-                text: 'Great atmosphere for both beginners and experienced boxers. The coaches pay attention to individual needs and help you progress at your own pace. The sparring events are well-organized and fun!'
-            },
-            {
-                name: 'Mike T.',
-                rating: 5,
-                date: 'September 28, 2023',
-                text: 'I\'ve been training here for 6 months and it\'s been transformative. Not just physically, but mentally as well. The discipline and focus I\'ve developed here has helped me in all areas of life.'
-            }
-        ];
+        // Video play functionality
+        document.querySelectorAll('.play-icon').forEach(icon => {
+            icon.addEventListener('click', function() {
+                const video = this.closest('.class-media').querySelector('video');
+                if (video) {
+                    video.play();
+                    this.style.display = 'none';
+                }
+            });
+        });
 
-        // Load sample reviews on page load
-        document.addEventListener('DOMContentLoaded', function() {
-            const reviewsList = document.getElementById('reviews
+        // Pause video when another is played
+        document.querySelectorAll('video').forEach(video => {
+            video.addEventListener('play', function() {
+                document.querySelectorAll('video').forEach(otherVideo => {
+                    if (otherVideo !== this && !otherVideo.paused) {
+                        otherVideo.pause();
+                        const playIcon = otherVideo.closest('.class-media').querySelector('.play-icon');
+                        if (playIcon) playIcon.style.display = 'flex';
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,1024 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>G Underground Boxing Club</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #d32f2f;
+            --primary-dark: #b71c1c;
+            --secondary: #212121;
+            --accent: #ffc107;
+            --light: #f5f5f5;
+            --gray: #9e9e9e;
+            --dark: #121212;
+            --border-radius: 8px;
+            --box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--light);
+            color: var(--secondary);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header Styles */
+        header {
+            background-color: var(--secondary);
+            color: var(--light);
+            padding: 15px 0;
+            box-shadow: var(--box-shadow);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--light);
+        }
+
+        .logo i {
+            color: var(--primary);
+        }
+
+        .logo span {
+            color: var(--primary);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+        }
+
+        nav a {
+            color: var(--light);
+            text-decoration: none;
+            font-weight: 500;
+            transition: var(--transition);
+            padding: 5px 10px;
+            border-radius: var(--border-radius);
+        }
+
+        nav a:hover, nav a.active {
+            background-color: var(--primary);
+            color: white;
+        }
+
+        .mobile-menu {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1549719386-74dfcbf7dbed?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80');
+            background-size: cover;
+            background-position: center;
+            color: var(--light);
+            padding: 100px 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 30px;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--primary);
+            color: white;
+            padding: 12px 30px;
+            border-radius: var(--border-radius);
+            text-decoration: none;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background-color: var(--primary-dark);
+            transform: translateY(-3px);
+            box-shadow: var(--box-shadow);
+        }
+
+        .btn-accent {
+            background-color: var(--accent);
+            color: var(--secondary);
+        }
+
+        .btn-accent:hover {
+            background-color: #ffb300;
+        }
+
+        /* Section Styles */
+        section {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+            position: relative;
+        }
+
+        .section-title:after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background-color: var(--primary);
+            margin: 15px auto;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 40px;
+            color: var(--gray);
+        }
+
+        /* About Section */
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .about-image {
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--box-shadow);
+        }
+
+        .about-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: var(--transition);
+        }
+
+        .about-image:hover img {
+            transform: scale(1.05);
+        }
+
+        .about-text h3 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: var(--secondary);
+        }
+
+        .about-text p {
+            margin-bottom: 20px;
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .feature {
+            background-color: white;
+            padding: 20px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            text-align: center;
+            transition: var(--transition);
+        }
+
+        .feature:hover {
+            transform: translateY(-5px);
+        }
+
+        .feature i {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+
+        /* Event Section */
+        .event-highlight {
+            background-color: var(--secondary);
+            color: var(--light);
+            padding: 60px 0;
+            text-align: center;
+        }
+
+        .event-card {
+            background-color: white;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--box-shadow);
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .event-header {
+            background-color: var(--primary);
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .event-header h3 {
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+        }
+
+        .event-body {
+            padding: 30px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+
+        .event-info h4 {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            color: var(--primary);
+        }
+
+        .event-details {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .detail {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .detail i {
+            color: var(--primary);
+            width: 20px;
+        }
+
+        .event-price {
+            background-color: var(--accent);
+            color: var(--secondary);
+            padding: 15px;
+            border-radius: var(--border-radius);
+            text-align: center;
+            margin-top: 15px;
+        }
+
+        .event-price .price {
+            font-size: 2rem;
+            font-weight: 700;
+        }
+
+        /* Locations Section */
+        .locations {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .location-card {
+            background-color: white;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--box-shadow);
+            transition: var(--transition);
+        }
+
+        .location-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .location-image {
+            height: 200px;
+            overflow: hidden;
+        }
+
+        .location-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .location-card:hover .location-image img {
+            transform: scale(1.1);
+        }
+
+        .location-info {
+            padding: 20px;
+        }
+
+        .location-info h3 {
+            margin-bottom: 10px;
+            color: var(--primary);
+        }
+
+        .location-info p {
+            margin-bottom: 15px;
+            color: var(--gray);
+        }
+
+        /* Reviews Section */
+        .reviews-section {
+            background-color: #f9f9f9;
+        }
+
+        .reviews-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .review-form {
+            background-color: white;
+            padding: 30px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            margin-bottom: 40px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: var(--border-radius);
+            font-size: 1rem;
+            transition: var(--transition);
+        }
+
+        .form-control:focus {
+            border-color: var(--primary);
+            outline: none;
+            box-shadow: 0 0 0 2px rgba(211, 47, 47, 0.2);
+        }
+
+        textarea.form-control {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        .rating {
+            display: flex;
+            gap: 5px;
+            margin-bottom: 10px;
+        }
+
+        .rating input {
+            display: none;
+        }
+
+        .rating label {
+            font-size: 1.5rem;
+            color: #ddd;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .rating input:checked ~ label,
+        .rating label:hover,
+        .rating label:hover ~ label {
+            color: var(--accent);
+        }
+
+        .reviews-list {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .review-card {
+            background-color: white;
+            padding: 20px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+        }
+
+        .review-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .reviewer {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .reviewer-avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: var(--primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 700;
+        }
+
+        .reviewer-info h4 {
+            margin-bottom: 5px;
+        }
+
+        .review-date {
+            color: var(--gray);
+            font-size: 0.9rem;
+        }
+
+        .review-rating {
+            color: var(--accent);
+        }
+
+        .review-content {
+            line-height: 1.6;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--secondary);
+            color: var(--light);
+            padding: 60px 0 20px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-column h3 {
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            color: var(--primary);
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .footer-column h3:after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 40px;
+            height: 3px;
+            background-color: var(--primary);
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            color: var(--gray);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .footer-links a:hover {
+            color: var(--light);
+            padding-left: 5px;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .contact-item i {
+            color: var(--primary);
+            width: 20px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: var(--light);
+            transition: var(--transition);
+        }
+
+        .social-links a:hover {
+            background-color: var(--primary);
+            transform: translateY(-3px);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: var(--gray);
+            font-size: 0.9rem;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .event-body {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            nav ul {
+                gap: 10px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .hero p {
+                font-size: 1rem;
+            }
+            
+            .mobile-menu {
+                display: block;
+            }
+            
+            nav {
+                display: none;
+                width: 100%;
+                margin-top: 15px;
+            }
+            
+            nav.active {
+                display: block;
+            }
+            
+            nav ul {
+                flex-direction: column;
+                gap: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <i class="fas fa-fist-raised"></i>
+                    <span>G</span> UNDERGROUND
+                </div>
+                <div class="mobile-menu">
+                    <i class="fas fa-bars"></i>
+                </div>
+                <nav>
+                    <ul>
+                        <li><a href="#" class="active">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#event">Event</a></li>
+                        <li><a href="#locations">Locations</a></li>
+                        <li><a href="#reviews">Reviews</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>G UNDERGROUND BOXING CLUB</h1>
+            <p>Train like a champion. Fight with honor. Join our community of dedicated boxers and fitness enthusiasts.</p>
+            <a href="#event" class="btn">Upcoming Event</a>
+            <a href="#reviews" class="btn btn-accent">Member Reviews</a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <div class="container">
+            <h2 class="section-title">About Our Club</h2>
+            <p class="section-subtitle">G Underground is more than just a boxing gym - it's a community dedicated to discipline, strength, and personal growth.</p>
+            
+            <div class="about-content">
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1599058917765-a780eda07a3e?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Boxing Training">
+                </div>
+                <div class="about-text">
+                    <h3>Train With The Best</h3>
+                    <p>At G Underground, we provide professional boxing training for all skill levels. Whether you're looking to compete, get in shape, or learn self-defense, our experienced coaches will help you reach your goals.</p>
+                    <p>Our facility features state-of-the-art equipment, sparring areas, and a supportive community that pushes you to be your best.</p>
+                    
+                    <div class="features">
+                        <div class="feature">
+                            <i class="fas fa-dumbbell"></i>
+                            <h4>Professional Equipment</h4>
+                            <p>Top-quality boxing gear and training facilities</p>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-users"></i>
+                            <h4>Expert Coaches</h4>
+                            <p>Experienced trainers with competition background</p>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-trophy"></i>
+                            <h4>Competition Ready</h4>
+                            <p>Preparation for amateur and professional fights</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Event Section -->
+    <section id="event" class="event-highlight">
+        <div class="container">
+            <h2 class="section-title" style="color: white;">Upcoming Event</h2>
+            
+            <div class="event-card">
+                <div class="event-header">
+                    <h3>SPARRING ENTERTAINMENT BY G UNDERGROUND</h3>
+                    <p>An exciting night of boxing entertainment</p>
+                </div>
+                <div class="event-body">
+                    <div class="event-info">
+                        <h4>Event Details</h4>
+                        <div class="event-details">
+                            <div class="detail">
+                                <i class="far fa-calendar-alt"></i>
+                                <span>22 November 2023</span>
+                            </div>
+                            <div class="detail">
+                                <i class="far fa-clock"></i>
+                                <span>5:30 PM - 12:00 AM</span>
+                            </div>
+                            <div class="detail">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>Nasi Kandar Apollo, Jalan Reko</span>
+                            </div>
+                            <div class="detail">
+                                <i class="fas fa-medal"></i>
+                                <span>Medals for Winners</span>
+                            </div>
+                        </div>
+                        <div class="event-price">
+                            <div class="price">RM 35</div>
+                            <p>Per Participant</p>
+                        </div>
+                    </div>
+                    <div class="event-description">
+                        <h4>What to Expect</h4>
+                        <p>Join us for an unforgettable night of boxing entertainment! Our Sparring Entertainment event features exciting matches between our club members and guest fighters.</p>
+                        <p>This event is open to all skill levels, with matches organized by weight class and experience. Come show your skills, support your teammates, and enjoy a night of thrilling boxing action.</p>
+                        <p>Food and refreshments will be available for purchase. Don't miss this opportunity to be part of our growing boxing community!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Locations Section -->
+    <section id="locations">
+        <div class="container">
+            <h2 class="section-title">Our Locations</h2>
+            <p class="section-subtitle">Find our training facilities and sparring locations</p>
+            
+            <div class="locations">
+                <div class="location-card">
+                    <div class="location-image">
+                        <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Sparring Location">
+                    </div>
+                    <div class="location-info">
+                        <h3>Sparring Location</h3>
+                        <p>Our dedicated sparring facility with professional boxing ring and safety equipment.</p>
+                        <div class="detail">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span><a href="https://share.google/n34TTHmwxJmcHm7cL" target="_blank">View on Google Maps</a></span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="location-card">
+                    <div class="location-image">
+                        <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Training Location">
+                    </div>
+                    <div class="location-info">
+                        <h3>Training Location</h3>
+                        <p>Our main training facility with boxing equipment, bags, and fitness areas.</p>
+                        <div class="detail">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span><a href="https://share.google/t3WGdKQh8urSAduoi" target="_blank">View on Google Maps</a></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reviews Section -->
+    <section id="reviews" class="reviews-section">
+        <div class="container">
+            <h2 class="section-title">Member Reviews</h2>
+            <p class="section-subtitle">See what our members say about their experience at G Underground</p>
+            
+            <div class="reviews-container">
+                <div class="review-form">
+                    <h3>Leave a Review</h3>
+                    <form id="reviewForm">
+                        <div class="form-group">
+                            <label for="reviewerName">Your Name</label>
+                            <input type="text" id="reviewerName" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Rating</label>
+                            <div class="rating">
+                                <input type="radio" id="star5" name="rating" value="5">
+                                <label for="star5">★</label>
+                                <input type="radio" id="star4" name="rating" value="4">
+                                <label for="star4">★</label>
+                                <input type="radio" id="star3" name="rating" value="3">
+                                <label for="star3">★</label>
+                                <input type="radio" id="star2" name="rating" value="2">
+                                <label for="star2">★</label>
+                                <input type="radio" id="star1" name="rating" value="1">
+                                <label for="star1">★</label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="reviewText">Your Review</label>
+                            <textarea id="reviewText" class="form-control" required></textarea>
+                        </div>
+                        <button type="submit" class="btn">Submit Review</button>
+                    </form>
+                </div>
+                
+                <div class="reviews-list" id="reviewsList">
+                    <!-- Reviews will be dynamically added here -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>G Underground</h3>
+                    <p>Professional boxing club dedicated to training champions and promoting fitness through boxing.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#event">Events</a></li>
+                        <li><a href="#locations">Locations</a></li>
+                        <li><a href="#reviews">Reviews</a></li>
+                        <li><a href="#">Training Programs</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Contact Us</h3>
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Nasi Kandar Apollo, Jalan Reko</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <span>+60 12-345 6789</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <span>info@gunderground.com</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2023 G Underground Boxing Club. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        document.querySelector('.mobile-menu').addEventListener('click', function() {
+            document.querySelector('nav').classList.toggle('active');
+        });
+
+        // Review Form Submission
+        document.getElementById('reviewForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const name = document.getElementById('reviewerName').value;
+            const rating = document.querySelector('input[name="rating"]:checked');
+            const text = document.getElementById('reviewText').value;
+            
+            if (!name || !rating || !text) {
+                alert('Please fill in all fields and select a rating');
+                return;
+            }
+            
+            // Create new review element
+            const reviewCard = document.createElement('div');
+            reviewCard.className = 'review-card';
+            
+            const date = new Date().toLocaleDateString('en-US', {
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric'
+            });
+            
+            // Generate star rating HTML
+            let stars = '';
+            for (let i = 0; i < 5; i++) {
+                if (i < rating.value) {
+                    stars += '<i class="fas fa-star"></i>';
+                } else {
+                    stars += '<i class="far fa-star"></i>';
+                }
+            }
+            
+            reviewCard.innerHTML = `
+                <div class="review-header">
+                    <div class="reviewer">
+                        <div class="reviewer-avatar">${name.charAt(0).toUpperCase()}</div>
+                        <div class="reviewer-info">
+                            <h4>${name}</h4>
+                            <div class="review-date">${date}</div>
+                        </div>
+                    </div>
+                    <div class="review-rating">
+                        ${stars}
+                    </div>
+                </div>
+                <div class="review-content">
+                    <p>${text}</p>
+                </div>
+            `;
+            
+            // Add new review to the top of the list
+            document.getElementById('reviewsList').prepend(reviewCard);
+            
+            // Reset form
+            document.getElementById('reviewForm').reset();
+            
+            // Show success message
+            alert('Thank you for your review!');
+        });
+
+        // Sample reviews
+        const sampleReviews = [
+            {
+                name: 'Ahmad R.',
+                rating: 5,
+                date: 'October 15, 2023',
+                text: 'Amazing training facility with professional coaches. I\'ve improved my technique significantly since joining G Underground. The community is supportive and the training is challenging but rewarding.'
+            },
+            {
+                name: 'Sarah L.',
+                rating: 4,
+                date: 'October 5, 2023',
+                text: 'Great atmosphere for both beginners and experienced boxers. The coaches pay attention to individual needs and help you progress at your own pace. The sparring events are well-organized and fun!'
+            },
+            {
+                name: 'Mike T.',
+                rating: 5,
+                date: 'September 28, 2023',
+                text: 'I\'ve been training here for 6 months and it\'s been transformative. Not just physically, but mentally as well. The discipline and focus I\'ve developed here has helped me in all areas of life.'
+            }
+        ];
+
+        // Load sample reviews on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            const reviewsList = document.getElementById('reviewsList');
+            
+            sampleReviews.forEach(review => {
+                const reviewCard = document.createElement('div');
+                reviewCard.className = 'review-card';
+                
+                // Generate star rating HTML
+                let stars = '';
+                for (let i = 0; i < 5; i++) {
+                    if (i < review.rating) {
+                        stars += '<i class="fas fa-star"></i>';
+                    } else {
+                        stars += '<i class="far fa-star"></i>';
+                    }
+                }
+                
+                reviewCard.innerHTML = `
+                    <div class="review-header">
+                        <div class="reviewer">
+                            <div class="reviewer-avatar">${review.name.charAt(0).toUpperCase()}</div>
+                            <div class="reviewer-info">
+                                <h4>${review.name}</h4>
+                                <div class="review-date">${review.date}</div>
+                            </div>
+                        </div>
+                        <div class="review-rating">
+                            ${stars}
+                        </div>
+                    </div>
+                    <div class="review-content">
+                        <p>${review.text}</p>
+                    </div>
+                `;
+                
+                reviewsList.appendChild(reviewCard);
+            });
+        });
+    </script>
+</body>
+</html>

@@ -3,19 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>G Underground </title>
-    <link rel="stylesheet" href="https://www.google.com/imgres?q=underground%20bangi&imgurl=https%3A%2F%2Flookaside.fbsbx.com%2Flookaside%2Fcrawler%2Finstagram%2Fgunderground.bangi%2Fprofile_pic.jpg&imgrefurl=https%3A%2F%2Fwww.instagram.com%2Fgunderground.bangi%2F&docid=t_JRWFtpEs2uDM&tbnid=GJI-6zzLswGosM&vet=12ahUKEwjUh9XkxtqQAxUSzDgGHTFyOmYQM3oECCoQAA..i&w=640&h=640&hcb=2&ved=2ahUKEwjUh9XkxtqQAxUSzDgGHTFyOmYQM3oECCoQAA">
+    <title>G Underground Boxing Club</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
-            --primary: #d32f2f;
-            --primary-dark: #b71c1c;
-            --secondary: #212121;
-            --accent: #ffc107;
+            --primary: #d4af37; /* Gold */
+            --primary-dark: #b8941f;
+            --secondary: #1a1a1a; /* Dark black */
+            --accent: #c41e3a; /* Red */
             --light: #f5f5f5;
             --gray: #9e9e9e;
-            --dark: #121212;
+            --dark: #000000;
             --border-radius: 8px;
-            --box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            --box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
             --transition: all 0.3s ease;
         }
 
@@ -27,9 +27,10 @@
         }
 
         body {
-            background-color: var(--light);
-            color: var(--secondary);
+            background-color: var(--secondary);
+            color: var(--light);
             line-height: 1.6;
+            overflow-x: hidden;
         }
 
         .container {
@@ -40,13 +41,14 @@
 
         /* Header Styles */
         header {
-            background-color: var(--secondary);
+            background-color: rgba(0, 0, 0, 0.9);
             color: var(--light);
             padding: 15px 0;
             box-shadow: var(--box-shadow);
             position: sticky;
             top: 0;
             z-index: 100;
+            border-bottom: 2px solid var(--primary);
         }
 
         .header-content {
@@ -61,15 +63,28 @@
             gap: 10px;
             font-size: 1.8rem;
             font-weight: 700;
+        }
+
+        .logo img {
+            height: 50px;
+            width: auto;
+        }
+
+        .logo-text {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .logo-main {
+            color: var(--primary);
+            font-size: 1.8rem;
+            line-height: 1;
+        }
+
+        .logo-sub {
             color: var(--light);
-        }
-
-        .logo i {
-            color: var(--primary);
-        }
-
-        .logo span {
-            color: var(--primary);
+            font-size: 0.8rem;
+            letter-spacing: 2px;
         }
 
         nav ul {
@@ -85,34 +100,63 @@
             transition: var(--transition);
             padding: 5px 10px;
             border-radius: var(--border-radius);
+            position: relative;
+        }
+
+        nav a:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: var(--primary);
+            transition: var(--transition);
         }
 
         nav a:hover, nav a.active {
-            background-color: var(--primary);
-            color: white;
+            color: var(--primary);
+        }
+
+        nav a:hover:after, nav a.active:after {
+            width: 100%;
         }
 
         .mobile-menu {
             display: none;
             font-size: 1.5rem;
             cursor: pointer;
+            color: var(--primary);
         }
 
         /* Hero Section */
         .hero {
-            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1549719386-74dfcbf7dbed?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80');
+            background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('https://images.unsplash.com/photo-1549719386-74dfcbf7dbed?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80');
             background-size: cover;
             background-position: center;
             color: var(--light);
-            padding: 100px 0;
+            padding: 120px 0;
             text-align: center;
+            position: relative;
+        }
+
+        .hero:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, rgba(212, 175, 55, 0.1), rgba(196, 30, 58, 0.1));
         }
 
         .hero h1 {
-            font-size: 3rem;
+            font-size: 3.5rem;
             margin-bottom: 20px;
             text-transform: uppercase;
-            letter-spacing: 2px;
+            letter-spacing: 3px;
+            color: var(--primary);
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
         }
 
         .hero p {
@@ -123,8 +167,8 @@
 
         .btn {
             display: inline-block;
-            background-color: var(--primary);
-            color: white;
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: var(--secondary);
             padding: 12px 30px;
             border-radius: var(--border-radius);
             text-decoration: none;
@@ -134,21 +178,21 @@
             transition: var(--transition);
             border: none;
             cursor: pointer;
-        }
-
-        .btn:hover {
-            background-color: var(--primary-dark);
-            transform: translateY(-3px);
             box-shadow: var(--box-shadow);
         }
 
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(212, 175, 55, 0.4);
+        }
+
         .btn-accent {
-            background-color: var(--accent);
-            color: var(--secondary);
+            background: linear-gradient(135deg, var(--accent), #a0151e);
+            color: white;
         }
 
         .btn-accent:hover {
-            background-color: #ffb300;
+            box-shadow: 0 6px 15px rgba(196, 30, 58, 0.4);
         }
 
         /* Section Styles */
@@ -162,13 +206,21 @@
             position: relative;
         }
 
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--primary);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
         .section-title:after {
             content: '';
             display: block;
-            width: 80px;
+            width: 100px;
             height: 4px;
-            background-color: var(--primary);
+            background: linear-gradient(to right, var(--primary), var(--accent));
             margin: 15px auto;
+            border-radius: 2px;
         }
 
         .section-subtitle {
@@ -176,6 +228,7 @@
             max-width: 700px;
             margin: 0 auto 40px;
             color: var(--gray);
+            font-size: 1.1rem;
         }
 
         /* About Section */
@@ -190,6 +243,7 @@
             border-radius: var(--border-radius);
             overflow: hidden;
             box-shadow: var(--box-shadow);
+            border: 2px solid var(--primary);
         }
 
         .about-image img {
@@ -206,11 +260,12 @@
         .about-text h3 {
             font-size: 1.8rem;
             margin-bottom: 20px;
-            color: var(--secondary);
+            color: var(--primary);
         }
 
         .about-text p {
             margin-bottom: 20px;
+            color: var(--light);
         }
 
         .features {
@@ -221,16 +276,18 @@
         }
 
         .feature {
-            background-color: white;
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.1), rgba(26, 26, 26, 0.8));
             padding: 20px;
             border-radius: var(--border-radius);
             box-shadow: var(--box-shadow);
             text-align: center;
             transition: var(--transition);
+            border: 1px solid rgba(212, 175, 55, 0.2);
         }
 
         .feature:hover {
             transform: translateY(-5px);
+            border-color: var(--primary);
         }
 
         .feature i {
@@ -239,26 +296,34 @@
             margin-bottom: 15px;
         }
 
+        .feature h4 {
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+
         /* Event Section */
         .event-highlight {
-            background-color: var(--secondary);
-            color: var(--light);
-            padding: 60px 0;
+            background: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9)), url('https://images.unsplash.com/photo-1626818599235-6d1df4b2b5a3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            padding: 80px 0;
             text-align: center;
         }
 
         .event-card {
-            background-color: white;
+            background: linear-gradient(135deg, rgba(26, 26, 26, 0.9), rgba(0, 0, 0, 0.9));
             border-radius: var(--border-radius);
             overflow: hidden;
             box-shadow: var(--box-shadow);
-            max-width: 800px;
+            max-width: 1000px;
             margin: 0 auto;
+            border: 2px solid var(--primary);
         }
 
         .event-header {
-            background-color: var(--primary);
-            color: white;
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: var(--secondary);
             padding: 20px;
             text-align: center;
         }
@@ -275,6 +340,18 @@
             gap: 30px;
         }
 
+        .event-poster {
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--box-shadow);
+        }
+
+        .event-poster img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
         .event-info h4 {
             font-size: 1.3rem;
             margin-bottom: 15px;
@@ -285,6 +362,7 @@
             display: flex;
             flex-direction: column;
             gap: 15px;
+            margin-bottom: 20px;
         }
 
         .detail {
@@ -299,8 +377,8 @@
         }
 
         .event-price {
-            background-color: var(--accent);
-            color: var(--secondary);
+            background: linear-gradient(135deg, var(--accent), #a0151e);
+            color: white;
             padding: 15px;
             border-radius: var(--border-radius);
             text-align: center;
@@ -320,15 +398,17 @@
         }
 
         .location-card {
-            background-color: white;
+            background: linear-gradient(135deg, rgba(26, 26, 26, 0.9), rgba(0, 0, 0, 0.9));
             border-radius: var(--border-radius);
             overflow: hidden;
             box-shadow: var(--box-shadow);
             transition: var(--transition);
+            border: 1px solid rgba(212, 175, 55, 0.2);
         }
 
         .location-card:hover {
             transform: translateY(-5px);
+            border-color: var(--primary);
         }
 
         .location-image {
@@ -363,7 +443,10 @@
 
         /* Reviews Section */
         .reviews-section {
-            background-color: #f9f9f9;
+            background: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9)), url('https://images.unsplash.com/photo-1599058917765-a780eda07a3e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
         }
 
         .reviews-container {
@@ -372,11 +455,12 @@
         }
 
         .review-form {
-            background-color: white;
+            background: linear-gradient(135deg, rgba(26, 26, 26, 0.9), rgba(0, 0, 0, 0.9));
             padding: 30px;
             border-radius: var(--border-radius);
             box-shadow: var(--box-shadow);
             margin-bottom: 40px;
+            border: 1px solid rgba(212, 175, 55, 0.2);
         }
 
         .form-group {
@@ -387,21 +471,24 @@
             display: block;
             margin-bottom: 8px;
             font-weight: 500;
+            color: var(--primary);
         }
 
         .form-control {
             width: 100%;
             padding: 12px 15px;
-            border: 1px solid #ddd;
+            border: 1px solid rgba(212, 175, 55, 0.3);
             border-radius: var(--border-radius);
             font-size: 1rem;
             transition: var(--transition);
+            background-color: rgba(0, 0, 0, 0.5);
+            color: var(--light);
         }
 
         .form-control:focus {
             border-color: var(--primary);
             outline: none;
-            box-shadow: 0 0 0 2px rgba(211, 47, 47, 0.2);
+            box-shadow: 0 0 0 2px rgba(212, 175, 55, 0.2);
         }
 
         textarea.form-control {
@@ -421,7 +508,7 @@
 
         .rating label {
             font-size: 1.5rem;
-            color: #ddd;
+            color: #444;
             cursor: pointer;
             transition: var(--transition);
         }
@@ -429,7 +516,7 @@
         .rating input:checked ~ label,
         .rating label:hover,
         .rating label:hover ~ label {
-            color: var(--accent);
+            color: var(--primary);
         }
 
         .reviews-list {
@@ -439,10 +526,11 @@
         }
 
         .review-card {
-            background-color: white;
+            background: linear-gradient(135deg, rgba(26, 26, 26, 0.9), rgba(0, 0, 0, 0.9));
             padding: 20px;
             border-radius: var(--border-radius);
             box-shadow: var(--box-shadow);
+            border: 1px solid rgba(212, 175, 55, 0.2);
         }
 
         .review-header {
@@ -462,16 +550,17 @@
             width: 40px;
             height: 40px;
             border-radius: 50%;
-            background-color: var(--primary);
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
             display: flex;
             align-items: center;
             justify-content: center;
-            color: white;
+            color: var(--secondary);
             font-weight: 700;
         }
 
         .reviewer-info h4 {
             margin-bottom: 5px;
+            color: var(--primary);
         }
 
         .review-date {
@@ -480,18 +569,20 @@
         }
 
         .review-rating {
-            color: var(--accent);
+            color: var(--primary);
         }
 
         .review-content {
             line-height: 1.6;
+            color: var(--light);
         }
 
         /* Footer */
         footer {
-            background-color: var(--secondary);
+            background: linear-gradient(135deg, rgba(0, 0, 0, 0.95), rgba(26, 26, 26, 0.95));
             color: var(--light);
             padding: 60px 0 20px;
+            border-top: 2px solid var(--primary);
         }
 
         .footer-content {
@@ -516,7 +607,7 @@
             bottom: 0;
             width: 40px;
             height: 3px;
-            background-color: var(--primary);
+            background: linear-gradient(to right, var(--primary), var(--accent));
         }
 
         .footer-links {
@@ -534,7 +625,7 @@
         }
 
         .footer-links a:hover {
-            color: var(--light);
+            color: var(--primary);
             padding-left: 5px;
         }
 
@@ -567,15 +658,16 @@
             justify-content: center;
             width: 40px;
             height: 40px;
-            background-color: rgba(255, 255, 255, 0.1);
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
             border-radius: 50%;
-            color: var(--light);
+            color: var(--secondary);
             transition: var(--transition);
+            text-decoration: none;
         }
 
         .social-links a:hover {
-            background-color: var(--primary);
             transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(212, 175, 55, 0.4);
         }
 
         .copyright {
@@ -610,7 +702,7 @@
             }
             
             .hero h1 {
-                font-size: 2.2rem;
+                font-size: 2.5rem;
             }
             
             .hero p {
@@ -644,8 +736,11 @@
         <div class="container">
             <div class="header-content">
                 <div class="logo">
-                    <i class="fas fa-fist-raised"></i>
-                    <span>G</span> UNDERGROUND
+                    <img src="https://raw.githubusercontent.com/Luciferr444/g.underground/main/bf4f7e57-fd62-48b2-a3d7-3f7db2a79aae.jpg" alt="G Underground Logo">
+                    <div class="logo-text">
+                        <div class="logo-main">G UNDERGROUND</div>
+                        <div class="logo-sub">BOXING CLUB</div>
+                    </div>
                 </div>
                 <div class="mobile-menu">
                     <i class="fas fa-bars"></i>
@@ -670,14 +765,16 @@
             <h1>G UNDERGROUND BOXING CLUB</h1>
             <p>Train like a champion. Fight with honor. Join our community of dedicated boxers and fitness enthusiasts.</p>
             <a href="#event" class="btn">Upcoming Event</a>
-            <a href="#reviews" class="btn btn-accent">Member Reviews</a>
+            <a href="https://chat.whatsapp.com/IPMEUhGbXL34MAbdoUry1P" target="_blank" class="btn btn-accent">Join Our Group</a>
         </div>
     </section>
 
     <!-- About Section -->
     <section id="about">
         <div class="container">
-            <h2 class="section-title">About Our Club</h2>
+            <div class="section-title">
+                <h2>About Our Club</h2>
+            </div>
             <p class="section-subtitle">G Underground is more than just a boxing gym - it's a community dedicated to discipline, strength, and personal growth.</p>
             
             <div class="about-content">
@@ -687,7 +784,7 @@
                 <div class="about-text">
                     <h3>Train With The Best</h3>
                     <p>At G Underground, we provide professional boxing training for all skill levels. Whether you're looking to compete, get in shape, or learn self-defense, our experienced coaches will help you reach your goals.</p>
-                    <p>Our facility features state-of-the-art equipment, sparring areas, and a supportive community that pushes you to be your best.</p>
+                    <p>Our outdoor facilities feature professional equipment, sparring areas, and a supportive community that pushes you to be your best.</p>
                     
                     <div class="features">
                         <div class="feature">
@@ -714,7 +811,9 @@
     <!-- Event Section -->
     <section id="event" class="event-highlight">
         <div class="container">
-            <h2 class="section-title" style="color: white;">Upcoming Event</h2>
+            <div class="section-title">
+                <h2>Upcoming Event</h2>
+            </div>
             
             <div class="event-card">
                 <div class="event-header">
@@ -722,6 +821,9 @@
                     <p>An exciting night of boxing entertainment</p>
                 </div>
                 <div class="event-body">
+                    <div class="event-poster">
+                        <img src="https://raw.githubusercontent.com/Luciferr444/g.underground/main/258723c5-3d5e-418e-aeca-1f046a504578.jpg" alt="Sparring Event Poster">
+                    </div>
                     <div class="event-info">
                         <h4>Event Details</h4>
                         <div class="event-details">
@@ -746,12 +848,11 @@
                             <div class="price">RM 35</div>
                             <p>Per Participant</p>
                         </div>
-                    </div>
-                    <div class="event-description">
-                        <h4>What to Expect</h4>
-                        <p>Join us for an unforgettable night of boxing entertainment! Our Sparring Entertainment event features exciting matches between our club members and guest fighters.</p>
-                        <p>This event is open to all skill levels, with matches organized by weight class and experience. Come show your skills, support your teammates, and enjoy a night of thrilling boxing action.</p>
-                        <p>Food and refreshments will be available for purchase. Don't miss this opportunity to be part of our growing boxing community!</p>
+                        <div style="margin-top: 20px;">
+                            <a href="https://wa.me/60195387418?text=Hi,%20I'm%20interested%20in%20joining%20the%20Sparring%20Event%20on%2022%20Nov" class="btn btn-accent" target="_blank">
+                                <i class="fab fa-whatsapp"></i> Register via WhatsApp
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -761,8 +862,10 @@
     <!-- Locations Section -->
     <section id="locations">
         <div class="container">
-            <h2 class="section-title">Our Locations</h2>
-            <p class="section-subtitle">Find our training facilities and sparring locations</p>
+            <div class="section-title">
+                <h2>Our Locations</h2>
+            </div>
+            <p class="section-subtitle">Find our outdoor training facilities and sparring locations</p>
             
             <div class="locations">
                 <div class="location-card">
@@ -771,10 +874,10 @@
                     </div>
                     <div class="location-info">
                         <h3>Sparring Location</h3>
-                        <p>Our dedicated sparring facility with professional boxing ring and safety equipment.</p>
+                        <p>Our dedicated outdoor sparring facility with professional boxing ring and safety equipment.</p>
                         <div class="detail">
                             <i class="fas fa-map-marker-alt"></i>
-                            <span><a href="https://share.google/n34TTHmwxJmcHm7cL" target="_blank">View on Google Maps</a></span>
+                            <span>Outdoor facility with professional setup</span>
                         </div>
                     </div>
                 </div>
@@ -785,10 +888,10 @@
                     </div>
                     <div class="location-info">
                         <h3>Training Location</h3>
-                        <p>Our main training facility with boxing equipment, bags, and fitness areas.</p>
+                        <p>Our main outdoor training facility with boxing equipment, bags, and fitness areas.</p>
                         <div class="detail">
                             <i class="fas fa-map-marker-alt"></i>
-                            <span><a href="https://share.google/t3WGdKQh8urSAduoi" target="_blank">View on Google Maps</a></span>
+                            <span>Outdoor training area with full equipment</span>
                         </div>
                     </div>
                 </div>
@@ -799,7 +902,9 @@
     <!-- Reviews Section -->
     <section id="reviews" class="reviews-section">
         <div class="container">
-            <h2 class="section-title">Member Reviews</h2>
+            <div class="section-title">
+                <h2>Member Reviews</h2>
+            </div>
             <p class="section-subtitle">See what our members say about their experience at G Underground</p>
             
             <div class="reviews-container">
@@ -848,10 +953,9 @@
                     <h3>G Underground</h3>
                     <p>Professional boxing club dedicated to training champions and promoting fitness through boxing.</p>
                     <div class="social-links">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-youtube"></i></a>
+                        <a href="https://wa.me/60195387418" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                        <a href="https://chat.whatsapp.com/IPMEUhGbXL34MAbdoUry1P" target="_blank"><i class="fas fa-users"></i></a>
+                        <a href="mailto:abdulhasifrahman@gmail.com"><i class="fas fa-envelope"></i></a>
                     </div>
                 </div>
                 
@@ -862,7 +966,7 @@
                         <li><a href="#event">Events</a></li>
                         <li><a href="#locations">Locations</a></li>
                         <li><a href="#reviews">Reviews</a></li>
-                        <li><a href="#">Training Programs</a></li>
+                        <li><a href="https://chat.whatsapp.com/IPMEUhGbXL34MAbdoUry1P" target="_blank">Join Group</a></li>
                     </ul>
                 </div>
                 
@@ -870,16 +974,16 @@
                     <h3>Contact Us</h3>
                     <div class="contact-info">
                         <div class="contact-item">
-                            <i class="fas fa-map-marker-alt"></i>
-                            <span>Nasi Kandar Apollo, Jalan Reko</span>
-                        </div>
-                        <div class="contact-item">
-                            <i class="fas fa-phone"></i>
-                            <span>+60 12-345 6789</span>
+                            <i class="fab fa-whatsapp"></i>
+                            <span>019-538 7418</span>
                         </div>
                         <div class="contact-item">
                             <i class="fas fa-envelope"></i>
-                            <span>info@gunderground.com</span>
+                            <span>abdulhasifrahman@gmail.com</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-users"></i>
+                            <span><a href="https://chat.whatsapp.com/IPMEUhGbXL34MAbdoUry1P" target="_blank" style="color: var(--gray);">Join WhatsApp Group</a></span>
                         </div>
                     </div>
                 </div>
@@ -982,43 +1086,4 @@
 
         // Load sample reviews on page load
         document.addEventListener('DOMContentLoaded', function() {
-            const reviewsList = document.getElementById('reviewsList');
-            
-            sampleReviews.forEach(review => {
-                const reviewCard = document.createElement('div');
-                reviewCard.className = 'review-card';
-                
-                // Generate star rating HTML
-                let stars = '';
-                for (let i = 0; i < 5; i++) {
-                    if (i < review.rating) {
-                        stars += '<i class="fas fa-star"></i>';
-                    } else {
-                        stars += '<i class="far fa-star"></i>';
-                    }
-                }
-                
-                reviewCard.innerHTML = `
-                    <div class="review-header">
-                        <div class="reviewer">
-                            <div class="reviewer-avatar">${review.name.charAt(0).toUpperCase()}</div>
-                            <div class="reviewer-info">
-                                <h4>${review.name}</h4>
-                                <div class="review-date">${review.date}</div>
-                            </div>
-                        </div>
-                        <div class="review-rating">
-                            ${stars}
-                        </div>
-                    </div>
-                    <div class="review-content">
-                        <p>${review.text}</p>
-                    </div>
-                `;
-                
-                reviewsList.appendChild(reviewCard);
-            });
-        });
-    </script>
-</body>
-</html>
+            const reviewsList = document.getElementById('reviews

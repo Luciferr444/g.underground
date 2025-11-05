@@ -477,6 +477,10 @@
             height: 200px;
             overflow: hidden;
             position: relative;
+            background: linear-gradient(135deg, #1a1a1a, #2a2a2a);
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
         .class-media img, .class-media video {
@@ -491,27 +495,25 @@
             transform: scale(1.1);
         }
 
-        .play-icon {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            background: rgba(0, 0, 0, 0.7);
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+        .video-placeholder {
+            text-align: center;
             color: var(--primary);
-            font-size: 1.5rem;
-            cursor: pointer;
-            transition: var(--transition);
+            padding: 20px;
         }
 
-        .play-icon:hover {
-            background: rgba(212, 175, 55, 0.8);
-            color: var(--secondary);
+        .video-placeholder i {
+            font-size: 3rem;
+            margin-bottom: 15px;
+        }
+
+        .video-placeholder h4 {
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+        }
+
+        .video-placeholder p {
+            color: var(--gray);
+            font-size: 0.9rem;
         }
 
         .class-info {
@@ -867,6 +869,29 @@
             letter-spacing: 1px;
         }
 
+        /* Video Hosting Instructions */
+        .video-instructions {
+            background: rgba(212, 175, 55, 0.1);
+            border: 1px solid var(--primary);
+            border-radius: var(--border-radius);
+            padding: 20px;
+            margin-top: 30px;
+        }
+
+        .video-instructions h4 {
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+
+        .video-instructions ol {
+            margin-left: 20px;
+            margin-bottom: 15px;
+        }
+
+        .video-instructions li {
+            margin-bottom: 8px;
+        }
+
         /* Responsive Styles */
         @media (max-width: 992px) {
             .about-content {
@@ -1017,7 +1042,11 @@
             <div class="class-content">
                 <div class="class-card">
                     <div class="class-media">
-                        <img src="https://raw.githubusercontent.com/Luciferr444/g.underground/main/class/class%20environment.jpg" alt="Class Environment">
+                        <div class="video-placeholder">
+                            <i class="fas fa-image"></i>
+                            <h4>Class Environment</h4>
+                            <p>Training area photo</p>
+                        </div>
                     </div>
                     <div class="class-info">
                         <h3>Outdoor Training Facility</h3>
@@ -1027,10 +1056,11 @@
                 
                 <div class="class-card">
                     <div class="class-media">
-                        <video controls poster="https://raw.githubusercontent.com/Luciferr444/g.underground/main/class/class%20environment.jpg">
-                            <source src="https://raw.githubusercontent.com/Luciferr444/g.underground/main/class/VID-20241023-WA0000.mp4" type="video/mp4">
-                            Your browser does not support the video tag.
-                        </video>
+                        <div class="video-placeholder">
+                            <i class="fas fa-video"></i>
+                            <h4>Training Session 1</h4>
+                            <p>Boxing technique video</p>
+                        </div>
                     </div>
                     <div class="class-info">
                         <h3>Boxing Technique Session</h3>
@@ -1040,16 +1070,33 @@
                 
                 <div class="class-card">
                     <div class="class-media">
-                        <video controls poster="https://raw.githubusercontent.com/Luciferr444/g.underground/main/class/class%20environment.jpg">
-                            <source src="https://raw.githubusercontent.com/Luciferr444/g.underground/main/class/VID-20241023-WA0001.mp4" type="video/mp4">
-                            Your browser does not support the video tag.
-                        </video>
+                        <div class="video-placeholder">
+                            <i class="fas fa-video"></i>
+                            <h4>Training Session 2</h4>
+                            <p>Advanced training video</p>
+                        </div>
                     </div>
                     <div class="class-info">
                         <h3>Advanced Training</h3>
                         <p>Advanced boxing techniques and combination drills for experienced practitioners.</p>
                     </div>
                 </div>
+            </div>
+
+            <!-- Video Hosting Instructions -->
+            <div class="video-instructions">
+                <h4>How to Add Your Videos:</h4>
+                <ol>
+                    <li>Upload your videos to YouTube, Vimeo, or Google Drive</li>
+                    <li>Get the embed code or direct link to the video</li>
+                    <li>Replace the placeholder divs with actual video elements</li>
+                    <li>For photos, upload to GitHub and use the raw URL</li>
+                </ol>
+                <p><strong>Example video embed code:</strong></p>
+                <pre>&lt;video controls&gt;
+  &lt;source src="your-video-url-here" type="video/mp4"&gt;
+  Your browser does not support the video tag.
+&lt;/video&gt;</pre>
             </div>
         </div>
     </section>
@@ -1384,30 +1431,6 @@
                     // Close mobile menu if open
                     document.querySelector('nav').classList.remove('active');
                 }
-            });
-        });
-
-        // Video play functionality
-        document.querySelectorAll('.play-icon').forEach(icon => {
-            icon.addEventListener('click', function() {
-                const video = this.closest('.class-media').querySelector('video');
-                if (video) {
-                    video.play();
-                    this.style.display = 'none';
-                }
-            });
-        });
-
-        // Pause video when another is played
-        document.querySelectorAll('video').forEach(video => {
-            video.addEventListener('play', function() {
-                document.querySelectorAll('video').forEach(otherVideo => {
-                    if (otherVideo !== this && !otherVideo.paused) {
-                        otherVideo.pause();
-                        const playIcon = otherVideo.closest('.class-media').querySelector('.play-icon');
-                        if (playIcon) playIcon.style.display = 'flex';
-                    }
-                });
             });
         });
     </script>
